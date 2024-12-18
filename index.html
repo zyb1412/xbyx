@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>寻宝游戏</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="data-display"></div>
+    <div id="start-screen">
+        <h1>欢迎来到寻宝游戏</h1>
+        <form id="character-form">
+            <label for="character-name">角色名称:</label>
+            <input type="text" id="character-name" required>
+            <button type="submit">创建角色并开始</button>
+        </form>
+    </div>
+
+    <div id="game-board" class="hidden">
+        <div id="character"></div>
+        <div id="clue"></div>
+    </div>
+    <div id="popup" class="hidden">
+        <p>谜题: 1 + 1 = ?</p>
+        <input type="text" id="answer">
+        <button onclick="checkAnswer()">提交</button>
+    </div>
+
+    <div id="temple-map" class="hidden">
+        <div id="treasure"></div>
+        <div id="guard"></div>
+    </div>
+    <div id="result-popup" class="hidden">
+        <p id="result-message"></p>
+        <button onclick="restartGame()">重新开始</button>
+    </div>
+    
+    <button id="toggle-music-btn">切换背景音乐</button>
+    <audio id="background-music" loop>
+        <source src="music/m1.mp3" type="audio/mp3">
+        <source src="music/m2.mp3" type="audio/mp3">
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
